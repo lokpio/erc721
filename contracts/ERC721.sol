@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
 
 import "./IERC721.sol";
@@ -241,18 +243,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
         require(msg.value == _prices[tokenId], "ERC721: eth amount is not correct");
         _orders[tokenId] = to;
     }
-    
-    function balanceOfContract() external view returns (uint256) {
-        return address(this).balance;
-    }
-    
-    function cancelOrder(address to, uint256 tokenId) public {
-        require(_orders[tokenId] != address(0), "ERC721: order does not exist" );
-        require(_orders[tokenId] != msg.sender, "ERC721: order does not belongs to address" );
-        _orders[tokenId] = address(0);
-        payable(_orders[tokenId]).sendValue(_prices[tokenId]);
-    }
-    
+
     function getOrder(uint256 tokenId) external view returns (address){
         return _orders[tokenId];
     }
