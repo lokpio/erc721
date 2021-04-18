@@ -47,6 +47,12 @@ Check Ownership of the token
 function ownerOf(uint256 tokenId) public view virtual override returns (address)
 ```
 
+## Run Test
+The Test includes a happy flow scenario on how to interact with the contract to do transactions.
+```
+truffle test ./test/erc721.js
+```
+
 ## Improvement
 For now, it requires the seller to confirm the order. In the future, another contract maybe deployed and act as the operator(middle man) to facilitate the whole process.
 It should results auto swapping between the Nft and ETH. Also, the new contract can act as the wallet to hold all the selling nfts etc...
