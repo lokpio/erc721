@@ -20,11 +20,11 @@ The smart contract is base on the audited [openzepplin](https://github.com/OpenZ
     ```
    function setForSell(address from, uint256 tokenId, bool forSell) public
    ```
-4. Buyer place order to the token and pay ETH
+4. Buyer places order to the token and pay ETH
     ```
    function order(address to, uint256 tokenId) public payable
    ```
-5. Seller approve the order
+5. Seller approves the order
     ```
     function approveOrder(address from, uint256 tokenId) public
     ```
@@ -34,7 +34,7 @@ Get Price of token
 ```
 function priceOf(uint256 tokenId) external view returns (uint256)
 ```
-Get adress that order the token
+Get address that order the token
 ```
 function getOrder(uint256 tokenId) external view returns (address)
 ```
@@ -55,4 +55,4 @@ truffle test ./test/erc721.js
 
 ## Improvement
 For now, it requires the seller to confirm the order. In the future, another contract maybe deployed and act as the operator(middle man) to facilitate the whole process.
-It should results auto swapping between the Nft and ETH. Also, the new contract can act as the wallet to hold all the selling nfts etc...
+It should result auto swapping between the Nft and ETH. Also, the new contract can act as the wallet to hold all the selling Nfts etc...
